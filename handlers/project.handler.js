@@ -1,4 +1,5 @@
-const projects = require("../models/Administrator.model");
+// const projects = require("../models/Administrator.model");
+const projects = require("../models/Project.model");
 const getProjectId = require('../utils/getProjectId');
 
 module.exports = {

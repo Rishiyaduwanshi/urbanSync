@@ -32,12 +32,12 @@ module.exports = {
       if (!result) {
         return res.status(404).json({
           status: "Error",
-          message: 'Project Manager with email ${email} not found',
+          message: `Project Manager with email ${email} not found`,
         });
       }
       res.status(200).json({
         status: "Success",
-        message: 'Project Manager with email ${email} deleted successfully',
+        message: `Project Manager with email ${email} deleted successfully`,
       });
     } catch (err) {
       res.status(500).json({
@@ -62,13 +62,13 @@ module.exports = {
       if (!result) {
         return res.status(404).json({
           status: "Error",
-          message: 'Project Manager with email ${email} not found',
+          message: `Project Manager with email ${email} not found`,
         });
       }
 
       res.status(200).json({
         status: "Success",
-        message: 'Project Manager with email ${email} updated successfully',
+        message: `Project Manager with email ${email} updated successfully`,
         data: result,
       });
     } catch (err) {

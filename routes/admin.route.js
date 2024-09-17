@@ -11,10 +11,11 @@ const {
   editProjectDetails
 } = require('../handlers/admin.handler');
 const { authenticateToken, authorizeRoles } = require('../middlewares/authMiddleware');
-
+// authenticateToken, authorizeRoles('admin'),
+// authenticateToken, authorizeRoles('admin'),
 // Admin routes
-router.route('/api/admins').get(authenticateToken, authorizeRoles('admin'), getAdmins);
-router.route('/api/admin').post(authenticateToken, authorizeRoles('admin'), createAdmin);
+router.route('/api/admins').get( getAdmins);
+router.route('/api/admin').post( createAdmin);
 router.route('/api/admin/:adminId')
 .patch(authenticateToken, authorizeRoles('admin'), updateAdmin)
 .delete(authenticateToken, authorizeRoles('admin'), deleteAdmin);

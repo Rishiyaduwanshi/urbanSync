@@ -6,10 +6,10 @@ const {
   updateProjectManager,
   deleteProjectManager
 } = require('../handlers/projectManager.handler');
-const { verifyToken, authorizeAdmin } = require('../middleware/auth.middleware');
+const { authenticateToken, authorizeAdmin } = require('../middlewares/authMiddleware');
 
 // Middleware to protect routes
-router.use(verifyToken); // Apply token verification to all routes
+router.use(authenticateToken); // Apply token verification to all routes
 
 // Route to get all project managers (accessible by admins)
 router.route('/api/project-managers')

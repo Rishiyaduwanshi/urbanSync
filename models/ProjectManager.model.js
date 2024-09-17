@@ -19,7 +19,7 @@ const ProjectManagerSchema = new mongoose.Schema(
     },
     designation: {
       type: String,
-      enum: ["Adminstrator", "Project Manager"],
+      enum: ["Administrator", "Project Manager"],
       default: "Project Manager"
     },
     departments : {

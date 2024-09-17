@@ -1,5 +1,5 @@
 const resources = require("../models/Resource.model");  // Assuming the model is named 'Resource'
-const projects = require("../models/Administrator.model");  // Assuming 'Project' model
+const projects = require("../models/Project.model");  // Assuming 'Project' model
 
 module.exports = {
   // GET Resources
