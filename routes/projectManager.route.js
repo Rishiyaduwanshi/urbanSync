@@ -6,18 +6,22 @@ const {
   updateProjectManager,
   deleteProjectManager
 } = require('../handlers/projectManager.handler');
+const { verifyToken, authorizeAdmin } = require('../middleware/auth.middleware');
 
-// Route to get all project managers
+// Middleware to protect routes
+router.use(verifyToken); // Apply token verification to all routes
+
+// Route to get all project managers (accessible by admins)
 router.route('/api/project-managers')
-  .get(getProjectManagers);
+  .get(authorizeAdmin, getProjectManagers);
 
-// Route to create a new project manager
+// Route to create a new project manager (accessible by admins)
 router.route('/api/project-manager')
-  .post(createProjectManager);
+  .post(authorizeAdmin, createProjectManager);
 
-// Route to update or delete a project manager by ID
-router.route('/api/project-manager/:managerId')
-  .patch(updateProjectManager)
-  .delete(deleteProjectManager);
+// Route to update or delete a project manager by email (accessible by admins)
+router.route('/api/project-manager/:email')
+  .patch(authorizeAdmin, updateProjectManager)
+  .delete(authorizeAdmin, deleteProjectManager);
 
 module.exports = router;

@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const ProjectSchema = new mongoose.Schema(
   {
+    projectId : {
+      type : String,
+      unique : true,
+      required : true
+    },
     title: {
       type: String,
       required: [true, 'Title of the project is required']
@@ -38,22 +43,7 @@ const ProjectSchema = new mongoose.Schema(
             "Electricity",
             "Water",
             "Telecom",
-            "Gas",
-            "Sanitation",
-            "Sewage",
-            "Transport",
-            "Parks & Recreation",
-            "Public Works",
-            "Urban Planning",
-            "Waste Management",
-            "Building Construction",
-            "Environmental Protection",
-            "Traffic Management",
-            "Housing & Urban Development",
-            "Health & Safety",
-            "Public Lighting",
-            "Fire Services",
-            "Stormwater Management"
+            "Gas"
           ],
     },
     conflict: {

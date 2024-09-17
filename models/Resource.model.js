@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ResourceSchema = new Schema(
+const ResourceSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -20,7 +20,11 @@ const ResourceSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Project',  // Could also be 'Department' or both depending on your app structure
     }
+  },
+  {
+    timestamps : true
   }
+
 );
 
 module.exports = mongoose.model("Resource", ResourceSchema);
